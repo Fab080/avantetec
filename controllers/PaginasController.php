@@ -163,13 +163,19 @@ class PaginasController
 
 		$categorias = Categoria::all();
 		$producto = Producto::find($productoId);
+
+		$query = " SELECT * FROM productos WHERE categoriasId = " . $producto->categoriasId . " AND productos.id != ". $producto->id . " LIMIT 4 ";
+
+		$productos = Producto::SQL($query);
+		
 		$categoria_producto = Categoria::find($producto->categoriasId);
 
 		$router->render('paginas/producto', [
 			'categorias' => $categorias,
 			'nombre_pagina' => $producto->nombre,
 			'producto' => $producto,
-			'categoria_producto' => $categoria_producto
+			'categoria_producto' => $categoria_producto,
+			'productos' => $productos
 		]);
 	}
 
