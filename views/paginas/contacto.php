@@ -64,26 +64,26 @@
             </div>
         </div>
         <div class="form-area upper">
-            <form action="https://formspree.io/f/myyleorq" method="POST" id="dreamit-form">
+            <form method="POST" id="dreamit-form">
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Nombre" required="" class="form-control">
+                            <input type="text" name="contacto[nombre]" placeholder="Nombre" required="" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email" required="" class="form-control">
+                            <input type="email" name="contacto[email]" placeholder="Email" required="" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Teléfono" required="" class="form-control">
+                            <input type="tel" name="contacto[telefono]" placeholder="Teléfono" required="" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="form-group">
-                            <textarea name="message" id="messagebox" cols="20" rows="7" placeholder="Your Message"
+                            <textarea name="contacto[mensaje]" id="messagebox" cols="20" rows="7" placeholder="Your Message"
                                 class="form-control"></textarea>
                         </div>
                     </div>

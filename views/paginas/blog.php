@@ -9,7 +9,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-1.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-1.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Design</a></li>
@@ -31,7 +31,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-2.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-2.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Wordpress</a></li>
@@ -53,7 +53,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-3.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-3.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Development</a></li>
@@ -75,7 +75,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-4.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-4.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Wordpress</a></li>
@@ -97,7 +97,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-1.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-1.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Wordpress</a></li>
@@ -119,7 +119,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-2.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-2.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Design</a></li>
@@ -141,7 +141,7 @@
 					<div class="col-lg-12">
 						<div class="blog-single-items">
 							<div class="blog-thumb">
-								<a href="#"><img src="/public/build/images/blog/bg-3.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/blog/bg-3.jpg" alt="thumb"></a>
 								<div class="blog-meta-top">
 									<ul>
 										<li><a href="#">Design</a></li>
@@ -185,7 +185,7 @@
 					</div>
 					<div class="widget-content text-center">
 						<div class="about-image">
-							<img src="/public/build/images/widget/wi-1.jpg" alt="thumb">
+							<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/widget/wi-1.jpg" alt="thumb">
 						</div>
 						<div class="about-name">
 							<h5>Zulia Maron Duo</h5>
@@ -212,7 +212,7 @@
 					<div class="widget-post">
 						<div class="widget-single-post">
 							<div class="post-thumb">
-								<a href="#"><img src="/public/build/images/widget/p1.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/widget/p1.jpg" alt="thumb"></a>
 							</div>
 							<div class="post-content">
 								<h4>
@@ -225,7 +225,7 @@
 						</div>
 						<div class="widget-single-post">
 							<div class="post-thumb">
-								<a href="#"><img src="/public/build/images/widget/p2.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/widget/p2.jpg" alt="thumb"></a>
 							</div>
 							<div class="post-content">
 								<h4>
@@ -238,7 +238,7 @@
 						</div>
 						<div class="widget-single-post">
 							<div class="post-thumb">
-								<a href="#"><img src="/public/build/images/widget/p3.jpg" alt="thumb"></a>
+								<a href="#"><img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/widget/p3.jpg" alt="thumb"></a>
 							</div>
 							<div class="post-content">
 								<h4>

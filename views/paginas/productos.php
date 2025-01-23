@@ -9,7 +9,7 @@
 	<div class="container container-categorias">
 		<?php foreach ($categorias as $categoria) : ?>
 			<a href="/Productos-categoria?id=<?php echo $categoria->id; ?>" class="categoria-producto case-study-thumb">
-				<img src="/public/build/images/categories/<?php echo $categoria->imagen; ?>" alt="<?php echo $categoria->descripcion; ?>" class="image-categorie">
+				<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/categories/<?php echo $categoria->imagen; ?>" alt="<?php echo $categoria->descripcion; ?>" class="image-categorie">
 				<p>
 					<span><?php echo $categoria->nombre; ?></span> <br>
 					<?php echo $categoria->descripcion; ?>

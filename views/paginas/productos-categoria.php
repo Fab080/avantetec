@@ -20,8 +20,7 @@
 				<ul class="menu_open10 sub-menu2 categories-list">
 					<?php foreach ($categorias as $categoria) : ?>
 						<li class="category">
-							<a
-								href="/Productos-categoria?id=<?php echo $categoria->id; ?>">
+							<a href="/Productos-categoria?id=<?php echo $categoria->id; ?>">
 								- <?php echo $categoria->nombre; ?>
 							</a>
 						</li>
@@ -35,7 +34,7 @@
 	<div class="products-list">
 		<?php foreach ($productos as $producto) : ?>
 			<a href="/Producto?id=<?php echo $producto->id; ?>" class="categoria-producto case-study-thumb">
-				<img src="/public/build/images/categorias_productos/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->descripcion; ?>" class="image-product">
+				<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/categorias_productos/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->descripcion; ?>" class="image-product">
 				<p>
 					<span><?php echo $producto->nombre; ?></span> <br>
 					<?php echo $producto->descripcion; ?>

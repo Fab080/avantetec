@@ -4,7 +4,7 @@
 	</div>
 	<div class="section-product">
 		<div class="img-section">
-			<img src="/public/build/images/categorias_productos/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->descripcion; ?>" class="image-product">
+			<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/categorias_productos/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->descripcion; ?>" class="image-product">
 		</div>
 		<div class="product-content">
 			<h2><?php echo $producto->nombre; ?></h2>

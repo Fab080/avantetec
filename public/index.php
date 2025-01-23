@@ -10,6 +10,7 @@ $router = new Router();
 
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/Contacto', [PaginasController::class, 'contacto']);
+$router->post('/Contacto', [PaginasController::class, 'contacto']);
 $router->get('/Quienes-somos', [PaginasController::class, 'quienesSomos']);
 // $router->get('/blog', [PaginasController::class, 'blog']);
 $router->get('/Cotizar', [PaginasController::class, 'cotizar']);
