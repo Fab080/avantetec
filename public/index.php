@@ -18,6 +18,7 @@ $router->get('/Productos', [PaginasController::class, 'productos']);
 $router->get('/Productos-categoria', [PaginasController::class, 'categorias']);
 $router->get('/Producto', [PaginasController::class, 'producto']);
 $router->get('/Buscar', [PaginasController:: class, 'buscar']);
+$router->post('/Datos-producto', [PaginasController:: class, 'enviarFormularioProducto']);
 
 $router->get('/Not-found', [PaginasController::class, 'notFound']);
 

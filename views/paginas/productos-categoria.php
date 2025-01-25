@@ -9,13 +9,13 @@
 		<ul>
 			<li class="expand">
 				<a class="menu_hide10 title-categorias" href="#">
-					<div><span class="line-marked"></span>Categorías</div>
-					<div class="menu-toggle2">
+					<div><span class="line-marked"></span>Categorías &#x2b;</div>
+					<!-- <div class="menu-toggle2">
 						<div class="icon2">
 							<span class="plus">+</span>
 							<span class="minus">-</span>
 						</div>
-					</div>
+					</div> -->
 				</a>
 				<ul class="menu_open10 sub-menu2 categories-list">
 					<?php foreach ($categorias as $categoria) : ?>

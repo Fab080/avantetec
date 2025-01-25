@@ -210,9 +210,9 @@ if (!isset($inicio)) {
 						</li>
 						<li><a href="/Contacto">Contacto</a></li>
 					</ul>
-					<div class="header-src-btn">
+					<!-- <div class="header-src-btn">
 						<div class="search-btn search-box-outer"><i class="fas fa-search"></i></div>
-					</div>
+					</div> -->
 					<div class="btn-common btn-about btn-quote">
 						<a href="/Cotizar"> Cotizar <i class="fas fa-angle-right"></i></a>
 					</div>
@@ -367,7 +367,7 @@ if (!isset($inicio)) {
 			<div class="row">
 				<div class="col-sm-12 col-md-6">
 					<div class="footer-copyright-text">
-						<p>Copyright &copy; Avante S.A.S 2025 </p>
+						<p>Copyright &copy; Avante S.A.S <?php echo date('Y'); ?> </p>
 					</div>
 				</div>
 				<div class="col-sm-12 col-md-6">
@@ -453,6 +453,9 @@ if (!isset($inicio)) {
 	<!--theme js-->
 	<script type="text/javascript" src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/js/theme.js"></script>
 	<!--jquery js-->
+	<?php
+		echo $script ?? '';
+	?>
 </body>
 
 </html>

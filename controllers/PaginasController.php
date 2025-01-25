@@ -73,11 +73,11 @@ class PaginasController
 			// }
 			// $mail->send();
 
-			if(!$mail->send()) {
+			if (!$mail->send()) {
 				debuguear('Mailer error: ' . $mail->ErrorInfo);
-			  } else {
+			} else {
 				header('Location: /');
-			  }
+			}
 		}
 
 		$router->render('paginas/contacto', [
@@ -164,10 +164,14 @@ class PaginasController
 		$categorias = Categoria::all();
 		$producto = Producto::find($productoId);
 
-		$query = " SELECT * FROM productos WHERE categoriasId = " . $producto->categoriasId . " AND productos.id != ". $producto->id . " LIMIT 4 ";
+		if (!$producto) {
+			header('Location: /Not-found');
+		}
+
+		$query = " SELECT * FROM productos WHERE categoriasId = " . $producto->categoriasId . " AND productos.id != " . $producto->id . " LIMIT 4 ";
 
 		$productos = Producto::SQL($query);
-		
+
 		$categoria_producto = Categoria::find($producto->categoriasId);
 
 		$router->render('paginas/producto', [
@@ -177,6 +181,61 @@ class PaginasController
 			'categoria_producto' => $categoria_producto,
 			'productos' => $productos
 		]);
+	}
+
+	public static function enviarFormularioProducto()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+			header('Location: /Not-found');
+		}
+
+		$producto = Producto::find($_POST['productoId']);
+
+		$categoria = Categoria::where('id', $producto->categoriasId);
+
+		$mail = new PHPMailer();
+		$mail->SMTPOptions = array(
+			'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+			)
+		);
+		// $mail->SMTPDebug = 2;
+		$mail->isSMTP();
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "ssl";
+		$mail->Host = 'smtp.hostinger.com';
+		$mail->Port = 465;
+		$mail->CharSet = 'UTF-8';
+		$mail->Username = 'info@avantesolucionestec.com.co';
+		$mail->Password = 'AvanteST,2025*';
+
+		$mail->setFrom('info@avantesolucionestec.com.co');
+		$mail->addAddress('ventas@avantesolucionestec.com.co', 'avantesolucionestec.com.co');
+		$mail->SMTPKeepAlive = true;
+		$mail->Mailer = "smtp";
+		$mail->Subject = 'Información de Interesado por ' . $producto->nombre;
+
+		// Set HTML
+		$mail->isHTML(true);
+
+		$contenido = '<html>';
+		$contenido .= '<p>Tienes un Nuevo Mensaje</p>';
+		$contenido .= '<p>El usuario está interesado por el producto: '. $producto->nombre.'</p>';
+		$contenido .= '<p>Email: ' . $_POST['email'] . ' </p>';
+		$contenido .= '<p>Telefono: ' . $_POST['telefono'] . ' </p>';
+		$contenido .= '<p>Producto: ' . $producto->nombre . ' </p>';
+		$contenido .= '<p>Categoría: ' . $categoria->nombre . ' </p>';
+		$contenido .= '</html>';
+
+		$mail->Body = $contenido;
+
+		if (!$mail->send()) {
+			debuguear('Mailer error: ' . $mail->ErrorInfo);
+		} else {
+			header('Location: /');
+		}
 	}
 
 	public static function buscar()
