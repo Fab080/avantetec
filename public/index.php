@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\CategoriaController;
 use Controllers\PaginasController;
+use Controllers\ProductoController;
 use MVC\Router;
 
 $router = new Router();
@@ -19,6 +20,9 @@ $router->get('/Productos-categoria', [PaginasController::class, 'categorias']);
 $router->get('/Producto', [PaginasController::class, 'producto']);
 $router->get('/Buscar', [PaginasController:: class, 'buscar']);
 $router->post('/Datos-producto', [PaginasController:: class, 'enviarFormularioProducto']);
+$router->get('/Actualizar-Producto', [ProductoController:: class, 'actualizarProducto']);
+// $router->post('/Actualizar-Producto', [ProductoController:: class, 'actualizarProducto']);
+
 
 $router->get('/Not-found', [PaginasController::class, 'notFound']);
 

@@ -69,23 +69,24 @@
 </div>
 
 <!-----START BRAND SECTION----->
-<div class="brand-section background-two pb-40 pt-40">
-	<div class="container">
+<div class="brand-section pb-40 pt-40" id="aliados">
+	<div class="container container-customers">
+		<h2>Nuestros Clientes</h2>
 		<div class="row">
 			<div class="brand-carousel owl-carousel">
-				<div class="single-brand">
+				<div class="single-brand image-brand">
 					<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-1.png" alt="Brand">
 				</div>
-				<div class="single-brand">
-					<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-2.png" alt="Brand">
+				<div class="single-brand image-brand">
+					<img height="175.72" src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-2.png" alt="Brand">
 				</div>
-				<div class="single-brand">
+				<div class="single-brand image-brand">
 					<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-3.png" alt="Brand">
 				</div>
-				<div class="single-brand">
+				<div class="single-brand image-brand">
 					<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-4.png" alt="Brand">
 				</div>
-				<div class="single-brand">
+				<div class="single-brand image-brand">
 					<img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/brand/brand-5.png" alt="Brand">
 				</div>
 			</div>
