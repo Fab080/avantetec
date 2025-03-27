@@ -19,11 +19,11 @@
                 </a>
                 <ul class="menu_open10 sub-menu2 categories-list">
                     <?php foreach ($categorias as $categoria) : ?>
-                    <li class="category">
-                        <a class="<?php echo $categoria->id === $_GET['id'] ? 'activo' : ''; ?>" href="/Productos-categoria?id=<?php echo $categoria->id; ?>">
-                            - <?php echo $categoria->nombre; ?>
-                        </a>
-                    </li>
+                        <li class="category">
+                            <a class="<?php echo $categoria->id === $_GET['id'] ? 'activo' : ''; ?>" href="/Productos-categoria?id=<?php echo $categoria->id; ?>">
+                                - <?php echo $categoria->nombre; ?>
+                            </a>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </li>
@@ -33,14 +33,16 @@
 
     <div class="products-list">
         <?php foreach ($productos as $producto) : ?>
-        <a href="/Producto?id=<?php echo $producto->id; ?>" class="producto case-study-thumb">
-            <img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/categorias_productos/<?php echo $producto->imagen; ?>"
-                alt="<?php echo $producto->descripcion; ?>" class="image-product">
-            <p>
-                <span><?php echo $producto->nombre; ?></span> <br>
-                <?php echo $producto->descripcion; ?>
-            </p>
-        </a>
-        <?php endforeach; ?>
+            <a href="/Producto?id=<?php echo $producto->id; ?>" class="producto case-study-thumb">
+                <img src="<?php echo $_ENV['ROUTE_DIRECTORY']; ?>build/images/categorias_productos/<?php echo $producto->imagen; ?>"
+                    alt="<?php echo $producto->descripcion; ?>" class="image-product">
+                <p>
+                    <span><?php echo $producto->nombre; ?></span> <br>
+                    <?php echo $producto->descripcion; ?>
+                </p>
+            </a>
+        <?php endforeach; 
+        echo $paginacion;
+        ?>
     </div>
 </div>

@@ -123,6 +123,22 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // Paginar los registros
+    public static function paginar($por_pagina, $offset) {
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT {$por_pagina} OFFSET {$offset}";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    // Paginar los registros con where
+    public static function paginarWhere($por_pagina, $offset, $columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla . " 
+        WHERE $columna = '$valor' 
+        LIMIT {$por_pagina} OFFSET {$offset}";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
 	// Busca un registro por su id
 	public static function where($columna, $valor)
 	{
@@ -130,6 +146,23 @@ class ActiveRecord {
 		$resultado = self::consultarSQL($query);
 		return array_shift($resultado);
 	}
+
+    // Traer un total de registros
+    public static function total() {
+		$query = " SELECT COUNT(*) FROM " . static::$tabla;
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
+    // Traer un total de registros con una condición
+    public static function totalWhere($columna, $valor) {
+		$query = " SELECT COUNT(*) FROM " . static::$tabla  . " WHERE $columna = '$valor' ";
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
 
 	// Consulta Plana de SQL (Utilizar cuano los métodos del modelo no son suficientes)
 	public static function SQL($query)

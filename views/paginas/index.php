@@ -198,7 +198,7 @@
 							</div>
 							<div class="case-study-overlay-content">
 								<div class="case-study-title">
-									<h4><a href="/Producto?id=<?php echo $categoria->id; ?>"><?php echo $categoria->nombre; ?></a></h4>
+									<h4><a href="/Productos-categoria?id=<?php echo $categoria->id; ?>&page=1"><?php echo $categoria->nombre; ?></a></h4>
 								</div>
 							</div>
 						</div>

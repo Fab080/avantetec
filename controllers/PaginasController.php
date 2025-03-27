@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Classes\Paginacion;
 use Model\Categoria;
 use Model\Producto;
 use MVC\Router;
@@ -135,25 +136,38 @@ class PaginasController
 
 	public static function categorias(Router $router)
 	{
-
 		$categoriaId = $_GET['id'];
-
 		$categorias = Categoria::all();
+
 		$categoria = Categoria::find($categoriaId);
 
 		if (!$categoria) {
 			header('Location: /productos');
 		}
 
-		$consulta = " SELECT * FROM productos WHERE productos.categoriasId = '{$categoriaId}' ";
+		$pagina_actual = $_GET['page'];
+		$pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
-		$productos = Producto::SQL($consulta);
+		if (!$pagina_actual || $pagina_actual < 1) {
+			header('Location: /Productos-categoria?id='.$categoria->id.'&page=1');
+		}
+
+		$registros_por_pagina = 6;
+		$total = Producto::totalWhere('categoriasId', $categoria->id);
+		$paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total, $categoria->id);
+
+		if ($paginacion->total_paginas() < $pagina_actual) {
+			header('Location: /Productos-categoria?id='.$categoria->id.'&page=1');
+		}
+		
+		$productos = Producto::paginarWhere($registros_por_pagina, $paginacion->offset(), 'categoriasId', $categoria->id);
 
 		$router->render('paginas/productos-categoria', [
 			'categoria' => $categoria,
 			'nombre_pagina' => $categoria->nombre,
 			'categorias' => $categorias,
-			'productos' => $productos
+			'productos' => $productos,
+			'paginacion' => $paginacion->paginacion()
 		]);
 	}
 

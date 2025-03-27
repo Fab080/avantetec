@@ -14,6 +14,7 @@ if (!isset($inicio)) {
     <title>Avante - <?php echo $nombre_pagina ?? '';  ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:site_name" content="Avante Soluciones Tecnológicas">
     <!-- <meta http-equiv="Content-Type" content="text/html"> -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="90x90"
